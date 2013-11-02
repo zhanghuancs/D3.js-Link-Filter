@@ -67,7 +67,7 @@ Then check each node, if node's all connected path is invisible, the node itself
 // Method to filter graph
 function filterGraph(aType, aVisibility)
 {	
-    // change the visibility of the connection path
+        // change the visibility of the connection path
 	path.style("visibility", function(o) {
 		var lOriginalVisibility = $(this).css("visibility");
 		return o.type === aType ? aVisibility : lOriginalVisibility;
