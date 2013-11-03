@@ -3,7 +3,7 @@ D3.js Force Directed Layout Link Filter
 
 Add link filter functionality to force-directed-layout implemented in [D3.js](http://d3js.org/). Use the basic code from [Mobile Patent Suits](http://bl.ocks.org/mbostock/1153292) example implemented in D3.js.
 
-**[Try Yourself!](http://jsfiddle.net/zhanghuancs/sdRR2/)**
+**[Try Yourself!](http://jsfiddle.net/zhanghuancs/cuYu8/)**
 
 Overview
 --------
