@@ -1,108 +1,108 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>Add Link Type Filter on Force Directed Layout D3.js</title>
-		<script type="text/javascript" src="http://d3js.org/d3.v2.min.js"></script>
-    	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Add Link Type Filter on Force Directed Layout D3.js</title>
+        <script type="text/javascript" src="http://d3js.org/d3.v2.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 		
-		<style type="text/css">
-			path.link {
-				fill: none;
-				stroke: #666;
-				stroke-width: 1.5px;
-			}
+        <style type="text/css">
+            path.link {
+                fill: none;
+                stroke: #666;
+                stroke-width: 1.5px;
+            }
 			
-			path.link.licensing {
-				stroke: green;
-			}
+            path.link.licensing {
+                stroke: green;
+            }
 			
-			path.link.resolved {
-				stroke-dasharray: 0,2 1;
-			}
+            path.link.resolved {
+                stroke-dasharray: 0,2 1;
+            }
 			
-			marker#licensing {
-				fill: green;
-			}
+            marker#licensing {
+                fill: green;
+            }
 			
-			marker#suit,
-			marker#resolved {
-		    	fill: black;
-			}
+            marker#suit,
+            marker#resolved {
+                fill: black;
+            }
 			
-			circle {
-				fill: #ccc;
-				stroke: #333;
-				stroke-width: 1.5px;
-			}
+            circle {
+                fill: #ccc;
+                stroke: #333;
+                stroke-width: 1.5px;
+            }
 			
-			text {
-				font: 10px sans-serif;
-				pointer-events: none;
-			}
+            text {
+                font: 10px sans-serif;
+                pointer-events: none;
+            }
 			
-			text.shadow {
-				stroke: #fff;
-				stroke-width: 3px;
-				stroke-opacity: .8;
-			}
+            text.shadow {
+                stroke: #fff;
+                stroke-width: 3px;
+                stroke-opacity: .8;
+            }
 			
-			body,
-			.container {
-				background-color: white;
-				margin: 0px;
-	    	}
+            body,
+            .container {
+                background-color: white;
+                margin: 0px;
+            }
 		    
-	    	.graphContainer {
-				text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
-			}	
-			#sidebar{
-				position: absolute;
-				z-index: 2;
-				background-color: #FFF;
-				padding: 10px;
-				margin: 5px;
-				border: 1px solid #6895b4;
-				min-height: 3px;
-				min-width: 8px;
-			}
+            .graphContainer {
+                text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+            }	
+            #sidebar{
+                position: absolute;
+                z-index: 2;
+                background-color: #FFF;
+                padding: 10px;
+                margin: 5px;
+                border: 1px solid #6895b4;
+                min-height: 3px;
+                min-width: 8px;
+            }
 		
-			.item-group {
-				margin-bottom: 5px;
-			}
+            .item-group {
+                margin-bottom: 5px;
+            }
 			
-			.item-group .item-label {
-				width: 90px;
-				text-align: right;
-				font-family: Arial,sans-serif;
-				font-size: 14px;
-				font-weight: bold;
-				position: relative;
-				min-height: 1px;
-				margin-top: 5px;
-				display: inline;
-				padding-right: 5px;
-				font-size: .90em;
-			}
+            .item-group .item-label {
+                width: 90px;
+                text-align: right;
+                font-family: Arial,sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                position: relative;
+                min-height: 1px;
+                margin-top: 5px;
+                display: inline;
+                padding-right: 5px;
+                font-size: .90em;
+            }
 	
-			.checkbox-interaction-group {
-				margin-left: 10px;
-				margin-top: 5px;
-				clear: both;
-			}
+            .checkbox-interaction-group {
+                margin-left: 10px;
+                margin-top: 5px;
+                clear: both;
+            }
 			
-			.checkbox-container {
-				display: block;
-				min-height: 22px;
-				vertical-align: middle;
-				margin-left: 10px;
-			}
+            .checkbox-container {
+                display: block;
+                min-height: 22px;
+                vertical-align: middle;
+                margin-left: 10px;
+            }
 			
-			.checkbox-container label{
-				display:inline;
-				margin-bottom: 0px;
-			}			
-		</style>
+            .checkbox-container label{
+                display:inline;
+                margin-bottom: 0px;
+            }			
+        </style>
 		<script type="text/javascript">
 			// method to get page height
 			function pageHeight()
