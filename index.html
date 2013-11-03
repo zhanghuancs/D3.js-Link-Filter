@@ -222,10 +222,10 @@
                                         .call(force.drag);
 				
                         var text = svg.append("svg:g")								  
-				      .selectAll("g")
-				      .data(force.nodes())
-				      .enter().append("svg:g")
-				      .attr("class", "nodeText");
+                                      .selectAll("g")
+                                      .data(force.nodes())
+                                      .enter().append("svg:g")
+                                      .attr("class", "nodeText");
 				
                         // A copy of the text with a thick white stroke for legibility.
                         text.append("svg:text")
@@ -244,8 +244,8 @@
                         function tick() {
 			    path.attr("d", function(d) {
 				var dx = d.target.x - d.source.x,
-					dy = d.target.y - d.source.y,
-					dr = Math.sqrt(dx * dx + dy * dy);
+				    dy = d.target.y - d.source.y,
+				    dr = Math.sqrt(dx * dx + dy * dy);
 				return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0 1," + d.target.x + "," + d.target.y;
 			    });
 
