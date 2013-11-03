@@ -4,7 +4,7 @@
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 		<title>Add Link Type Filter on Force Directed Layout D3.js</title>
 		<script type="text/javascript" src="http://d3js.org/d3.v2.min.js"></script>
-	    	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+    	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 		
 		<style type="text/css">
 			path.link {
@@ -27,7 +27,7 @@
 			
 			marker#suit,
 			marker#resolved {
-			    	fill: black;
+		    	fill: black;
 			}
 			
 			circle {
@@ -50,10 +50,10 @@
 			body,
 			.container {
 				background-color: white;
-				 margin: 0px;
-		    	}
+				margin: 0px;
+	    	}
 		    
-		    	.graphContainer {
+	    	.graphContainer {
 				text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
 			}	
 			#sidebar{
@@ -108,16 +108,16 @@
 			function pageHeight()
 			{
 				var lReturn = window.innerHeight;
-				 if (typeof lReturn == "undefined")
-			    	{
-			    		if (typeof document.documentElement != "undefined" && typeof document.documentElement.clientHeight != "undefined")
-			  		{
-			     			lReturn = document.documentElement.clientHeight;
+				if (typeof lReturn == "undefined")
+		    	{
+		    		if (typeof document.documentElement != "undefined" && typeof document.documentElement.clientHeight != "undefined")
+		  			{
+	     				lReturn = document.documentElement.clientHeight;
 			  		}
 			  		else if (typeof document.body != "undefined")
-			    		{
-			       			lReturn = document.body.clientHeight;
-			    		}
+		    		{
+		       			lReturn = document.body.clientHeight;
+		    		}
 			 	}
 			    return lReturn;
 			}	
@@ -128,14 +128,14 @@
 				var lReturn = window.innerWidth;
 			   	if (typeof lReturn == "undefined")
 			   	{
-			    		if (typeof document.documentElement != "undefined" && typeof document.documentElement.clientWidth != "undefined")
+		    		if (typeof document.documentElement != "undefined" && typeof document.documentElement.clientWidth != "undefined")
 			  		{
-			     			lReturn = document.documentElement.clientWidth;
+		     			lReturn = document.documentElement.clientWidth;
 			  		}
 			  		else if (typeof document.body != "undefined")
-			    		{
-			        		lReturn = document.body.clientWidth;
-			      		}
+		    		{
+		        		lReturn = document.body.clientWidth;
+		      		}
 			   	}
 			   	return lReturn;
 			}		
@@ -293,35 +293,35 @@
 						function filterGraph(aType, aVisibility)
 						{	
 							// change the visibility of the connection path
-					        	path.style("visibility", function(o) {
-					        		var lOriginalVisibility = $(this).css("visibility");
-					            		return o.type === aType ? aVisibility : lOriginalVisibility;
-					        	});	
+				        	path.style("visibility", function(o) {
+				        		var lOriginalVisibility = $(this).css("visibility");
+			            		return o.type === aType ? aVisibility : lOriginalVisibility;
+				        	});	
 					        
 							// change the visibility of the node
 							// if all the links with that node are invisibile, the node should also be invisible
 							// otherwise if any link related to that node is visibile, the node should be visible
-					        	circle.style("visibility", function(o, i) {	
-					        		var lHideNode = true;
-					        		path.each(function(d, i){
-						        		if(d.source === o || d.target === o)
-					        			{
-					        				if($(this).css("visibility") === "visible")
-				        					{
-					        					lHideNode = false;
-					        					// we need show the text for this circle
-					        					d3.select(d3.selectAll(".nodeText")[0][i]).style("visibility","visible");
-					        					return "visible";
-				        					}
-					        			}
-					        		});
-						        	if(lHideNode)
-					        		{
-						        		// we need hide the text for this circle 
-						        		d3.select(d3.selectAll(".nodeText")[0][i]).style("visibility","hidden");
-					        			return "hidden";
-					        		}
-					        	});
+				        	circle.style("visibility", function(o, i) {	
+				        		var lHideNode = true;
+				        		path.each(function(d, i){
+					        		if(d.source === o || d.target === o)
+				        			{
+				        				if($(this).css("visibility") === "visible")
+			        					{
+				        					lHideNode = false;
+				        					// we need show the text for this circle
+				        					d3.select(d3.selectAll(".nodeText")[0][i]).style("visibility","visible");
+				        					return "visible";
+			        					}
+				        			}
+				        		});
+					        	if(lHideNode)
+				        		{
+					        		// we need hide the text for this circle 
+					        		d3.select(d3.selectAll(".nodeText")[0][i]).style("visibility","hidden");
+				        			return "hidden";
+				        		}
+				        	});
 						}
 					});				
 				</script>
