@@ -209,10 +209,10 @@
 				    .attr("height", h);
 				
                         var path = svg.append("svg:g")
-				      .selectAll("path")
-				      .data(force.links())
-	  			      .enter().append("svg:path")
-	    		              .attr("class", function(d) { return "link " + d.type; });
+                                      .selectAll("path")
+                                      .data(force.links())
+                                      .enter().append("svg:path")
+                                      .attr("class", function(d) { return "link " + d.type; });
 				
                         var circle = svg.append("svg:g")
                                         .selectAll("circle")
@@ -271,7 +271,7 @@
 			          .attr("class", "checkbox-container")
 			      .append("label")
 		  	      .each(function(d) {
-		  	      // create checkbox for each data
+		  	          // create checkbox for each data
 		  	          d3.select(this)
 				    .append("input")
 			            .attr("type", "checkbox")
